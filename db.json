@@ -1,0 +1,58 @@
+{
+  "registrations": [
+    {
+      "id": "e84e",
+      "name": "ewwr",
+      "email": "wewe@sdds.nij",
+      "mobile": "86086",
+      "dob": "0034-04-05",
+      "gender": "male",
+      "blood_group": "O+"
+    },
+    {
+      "id": "ef6e",
+      "name": "shrilavanya",
+      "email": "shrilavanya8@gmail.com",
+      "mobile": "9345525889",
+      "dob": "2003-03-04",
+      "gender": "female",
+      "blood_group": "B+"
+    },
+    {
+      "id": "54ab",
+      "name": "SDFGOK",
+      "email": "GOFOKG@GM",
+      "mobile": "78990",
+      "dob": "0456-08-03",
+      "gender": "female",
+      "blood_group": "B-"
+    },
+    {
+      "id": "3b0c",
+      "name": "fghhgj",
+      "email": "sfet@gmail",
+      "mobile": "08668058123",
+      "dob": "2024-08-30",
+      "gender": "female",
+      "blood_group": "B+"
+    },
+    {
+      "id": "7fdc",
+      "name": "shritharanya",
+      "email": "shrilavanyashritharanya@gmail.com",
+      "mobile": "08668058123",
+      "dob": "2003-07-08",
+      "gender": "female",
+      "blood_group": "B+"
+    },
+    {
+      "id": "ef1f",
+      "name": "kavi",
+      "email": "kavipriya@gmail.com",
+      "mobile": "9345525889",
+      "dob": "2024-08-22",
+      "gender": "female",
+      "blood_group": "O+"
+    }
+  ]
+}

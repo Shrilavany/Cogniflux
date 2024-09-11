@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("soft.gif") no-repeat center center/cover; /* Use an animated flag GIF */
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  width: 100%;
+}
+
+.cta-button {
+  background-color: #ffa500;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.cta-button:hover {
+  background-color: #ff7f00;
+}
+#background-music {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}

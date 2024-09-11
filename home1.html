@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Empathy</title>
+    <link rel="stylesheet" href="homeapp.css" />
+    <style>
+      /* Hide the video while ensuring autoplay */
+      .video-background {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-background">
+      <iframe
+        src="https://www.youtube.com/embed/wjbmUboS3Rw?autoplay=1&loop=1&playlist=wjbmUboS3Rw"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="container">
+      <div id="home" class="flex-center flex-column">
+        <h1>Empathy</h1>
+        <a class="btn" href="game.html">Play</a>
+      </div>
+    </div>
+  </body>
+</html>
