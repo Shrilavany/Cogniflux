@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Selection</title>
+    <link rel="stylesheet" href="profile-selection.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Choose Your Profile Picture</h1>
+    </header>
+    <main>
+      <!-- Profile Selection Section -->
+      <div class="image-gallery">
+        <img
+          src="AS.jpeg"
+          alt="Profile Option 1"
+          class="profile-option"
+          data-image="AS.jpeg"
+          data-message="Hi, I am Ashwin. Choose me as your profile to play this game..."
+          data-voice="VoiceName1"
+        />
+        <img
+          src="har.avif"
+          alt="Profile Option 2"
+          class="profile-option"
+          data-image="har.avif"
+          data-message="Hi, I am Fenix. Choose me as your profile to play this game..."
+          data-voice="VoiceName2"
+        />
+        <img
+          src="andrew.jpeg"
+          alt="Profile Option 3"
+          class="profile-option"
+          data-image="andrew.jpeg"
+          data-message="Hi, I am Andrew. Choose me as your profile to play this game..."
+          data-voice="VoiceName3"
+        />
+        <img
+          src="Ankita.jpg"
+          alt="Profile Option 4"
+          class="profile-option"
+          data-image="Ankita.jpg"
+          data-message="Hi, I am Ankita. Choose me as your profile to play this game..."
+          data-voice="VoiceName4"
+        />
+        <img
+          src="santra.jpg"
+          alt="Profile Option 5"
+          class="profile-option"
+          data-image="santra.jpg"
+          data-message="Hi, I am Santra. Choose me as your profile to play this game..."
+          data-voice="VoiceName5"
+        />
+        <!-- Add more images as needed -->
+      </div>
+      <div class="preview-container">
+        <img
+          id="profile-preview"
+          src=""
+          alt=""
+          class="profile-preview"
+          style="display: none"
+        />
+        <p
+          id="profile-message"
+          class="profile-message"
+          style="display: none"
+        ></p>
+      </div>
+      <button id="confirm-btn" class="cta-button" disabled>Confirm</button>
+      <a
+        href="topic.html"
+        id="start-btn"
+        class="cta-button"
+        style="display: none"
+        >Let’s Start</a
+      >
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let voices = [];
+        const femaleVoices = [];
+
+        function loadVoices() {
+          voices = speechSynthesis.getVoices();
+          femaleVoices.length = 0;
+          femaleVoices.push(
+            ...voices.filter((voice) =>
+              voice.name.toLowerCase().includes("female")
+            )
+          );
+          console.log(femaleVoices);
+        }
+
+        speechSynthesis.onvoiceschanged = loadVoices;
+        loadVoices();
+
+        document.querySelectorAll(".profile-option").forEach((image) => {
+          image.addEventListener("click", function () {
+            document
+              .querySelectorAll(".profile-option")
+              .forEach((img) => img.classList.remove("selected"));
+
+            this.classList.add("selected");
+
+            const imgSrc = this.getAttribute("data-image");
+            const message = this.getAttribute("data-message");
+
+            const previewImg = document.getElementById("profile-preview");
+            const messageEl = document.getElementById("profile-message");
+
+            previewImg.src = imgSrc;
+            previewImg.style.display = "block";
+
+            messageEl.textContent = message;
+            messageEl.style.display = "block";
+
+            if ("speechSynthesis" in window) {
+              const utterance = new SpeechSynthesisUtterance(message);
+
+              const voiceName = this.getAttribute("data-voice");
+              const selectedVoice = voices.find(
+                (voice) => voice.name === voiceName
+              );
+              if (selectedVoice) {
+                utterance.voice = selectedVoice;
+              } else {
+                console.warn(`Voice '${voiceName}' not found.`);
+              }
+              speechSynthesis.speak(utterance);
+            } else {
+              console.error(
+                "SpeechSynthesis API is not supported in this browser."
+              );
+            }
+
+            document.getElementById("confirm-btn").disabled = false;
+          });
+        });
+
+        document
+          .getElementById("confirm-btn")
+          .addEventListener("click", function () {
+            const img = document.getElementById("profile-preview");
+            if (img.src) {
+              const messageEl = document.getElementById("profile-message");
+              messageEl.textContent =
+                "Thank you for choosing me as your profile!";
+              messageEl.style.display = "block";
+
+              localStorage.setItem("selectedProfileImage", img.src);
+
+              document.getElementById("start-btn").style.display =
+                "inline-block";
+            } else {
+              alert("Please select a picture first.");
+            }
+          });
+
+        document
+          .getElementById("start-btn")
+          .addEventListener("click", function () {
+            window.location.href = "topic.html";
+          });
+      });
+    </script>
+  </body>
+</html>

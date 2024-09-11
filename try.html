@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to our game</title>
+    <link rel="stylesheet" href="try.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Cogniflux</h1>
+        <p class="hero-subtitle">Unlock Your Brain’s Full Potential</p>
+        <a href="register1.html" class="cta-button">Get Started</a>
+      </div>
+      <!-- Logo positioned in the top right corner -->
+      <a href="story.html" class="logo-link">
+        <div class="logo">
+          <img src="download.webp" alt="Cogniflux Logo" class="logo-img" />
+          <span class="logo-text">Cogniflux</span>
+        </div>
+      </a>
+    </header>
+
+    <!-- Video Modal (if needed) -->
+    <div id="videoModal" class="modal">
+      <span class="close" onclick="closeVideo()">&times;</span>
+      <video controls>
+        <source
+          src="empathy-communication-adaptability-story.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <script>
+      function showVideo() {
+        document.getElementById("videoModal").style.display = "block";
+      }
+
+      function closeVideo() {
+        document.getElementById("videoModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

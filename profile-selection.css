@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: rgb(29, 19, 121);
+}
+
+header {
+  margin: 20px 0;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Increased gap for better spacing */
+  margin-bottom: 20px;
+}
+
+.profile-option {
+  width: 150px; /* Increased size */
+  height: 150px; /* Increased size */
+  object-fit: cover;
+  border: 5px solid transparent; /* Wider border for visibility */
+  border-radius: 50%; /* Circular profile */
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-option.selected {
+  border-color: transparent; /* Ensure no solid border */
+  box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.8),
+    /* Red shadow */ 0 0 10px 5px rgba(0, 255, 0, 0.8);
+  /* Green shadow / 0 0 10px 5px rgba(0, 0, 255, 0.8); / Blue shadow */
+}
+
+.preview-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-preview {
+  display: none;
+  width: 250px; /* Increased size */
+  height: 250px; /* Increased size */
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+.profile-message {
+  display: none;
+  font-size: 1.2em;
+  color: #f4f0f0;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 10px;
+}
+
+.cta-button:hover {
+  background-color: #ff7f00;
+}
