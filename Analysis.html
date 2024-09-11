@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="Analysis.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Quiz Results</h1>
+        <h2>Welcome, <span id="user-name"></span></h2>
+      </header>
+      <div id="results">
+        <h2>Total Questions: <span id="total-questions"></span></h2>
+        <h2>Questions Attended: <span id="questions-attended"></span></h2>
+        <h2>Total Marks: <span id="total-marks"></span></h2>
+        <canvas id="combined-chart" width="300" height="300"></canvas>
+        <blockquote>
+          <p id="motivational-quote"></p>
+        </blockquote>
+        <!-- Feedback detail description box -->
+        <div id="detail-description" class="feedback"></div>
+      </div>
+      <div class="cta-container">
+        <a href="end.html" class="cta-button">Next</a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Analysis.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptability Quiz</title>
+    <link rel="stylesheet" href="Adabtstyls.css" />
+    <style>
+      /* Hide the video while ensuring autoplay */
+      .video-background {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Music -->
+    <div class="video-background">
+      <iframe
+        src="https://www.youtube.com/embed/wATcNesbBaA?autoplay=1&loop=1&playlist=wATcNesbBaA"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="container">
+      <header>
+        <h1>Adaptability Quiz</h1>
+      </header>
+      <div id="game">
+        <h2 id="question">Question will appear here</h2>
+        <div id="choices">
+          <div class="choice-container">
+            <div class="choice-prefix">1</div>
+            <div class="choice-text">Strongly Agree 😍</div>
+          </div>
+          <div class="choice-container">
+            <div class="choice-prefix">2</div>
+            <div class="choice-text">Agree 🙂</div>
+          </div>
+          <div class="choice-container">
+            <div class="choice-prefix">3</div>
+            <div class="choice-text">Neutral 😐</div>
+          </div>
+          <div class="choice-container">
+            <div class="choice-prefix">4</div>
+            <div class="choice-text">Disagree 😕</div>
+          </div>
+          <div class="choice-container">
+            <div class="choice-prefix">5</div>
+            <div class="choice-text">Strongly Disagree 😠</div>
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button id="back" style="display: none">Back</button>
+          <button id="next">Next</button>
+          <a
+            href="resultA.html"
+            class="cta-button"
+            id="submit-btn"
+            style="display: none"
+            >Submit</a
+          >
+        </div>
+        <div id="progress-container">
+          <div id="progress"></div>
+        </div>
+      </div>
+      <div id="result" style="display: none">
+        <h2 id="result-text">Your result will appear here</h2>
+        <button id="play-again">Play Again</button>
+      </div>
+    </div>
+    <script src="Adabt.js"></script>
+  </body>
+</html>
